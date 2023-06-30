@@ -7,8 +7,6 @@ interface IStudent {
 
     name: string;
 
-    studentCode: string;
-
     theoryScore: number;
 
     practicalScore: number;
@@ -26,8 +24,6 @@ interface IStudent {
 const studentSchema = new Schema<IStudent>({
 
     name: String,
-
-    studentCode: String,
 
     theoryScore: Number,
 

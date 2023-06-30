@@ -13,4 +13,5 @@ router.get("/student/update/:id",Controller.getStudentUpdate)
 router.post("/student/update/:id",Controller.postStudentUpdate)
 router.get("/student/delete/:id",Controller.getDeleteStudent)
 router.post("/student/delete/:id",Controller.postDeleteStudent)
+router.get("/student/score",Controller.getScoreList)
 export default router

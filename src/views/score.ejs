@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Student List</title>
+    <title>Score</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,33 +11,15 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<a href="/student/add" class="btn btn-primary">Thêm học viên</a>
-<a href="/student/score" class="btn btn-success">Danh sách điểm học viên</a>
-<table class="table table-striped">
-    <thead>
+<table class="table">
+<% studentList.forEach(st=>{%>
     <tr>
-        <th scope="col">#</th>
-        <th scope="col">Tên</th>
-        <th scope="col">Lớp</th>
-        <th scope="col">Đánh giá</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
+        <td><%=st.name%></td>
+        <td><%=st.theoryScore%></td>
     </tr>
-    </thead>
-    <tbody>
-    <% let count = 1%>
-    <% studentList.forEach(student=>{ %>
-        <tr>
-            <th scope="row"><%=count++%></th>
-            <td><a href="/student/detail/<%=student._id%>"><%=student.name%></a></td>
-            <td><%=student.class.name%></td>
-            <td><%=student.evaluate%></td>
-            <td><a href="/student/update/<%=student._id%>" class="btn btn-outline-primary">Sửa</a></td>
-            <td><a href="/student/delete/<%=student._id%>" class="btn btn-outline-danger">Xóa</a></td>
-        </tr>
-    <% }) %>
-    </tbody>
+<%})%>
 </table>
+<a href="/" class="btn btn-outline-secondary">Quay lại</a>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
