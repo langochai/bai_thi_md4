@@ -57,7 +57,7 @@ export class Controller{
         res.redirect("/")
     }
     static async getScoreList(req,res){
-        let studentList = await Student.find().populate("class",{name: 1, _id: 0},Class).sort({score:1});
+        let studentList = await Student.find().populate("class",{name: 1, _id: 0},Class).sort({theoryScore:1});
         res.render("score",{studentList})
     }
 }
