@@ -9,7 +9,8 @@ router.get("/student/list",Controller.showStudentList);
 router.get("/student/add",Controller.getAddStudent)
 router.post("/student/add",Controller.postAddStudent)
 router.get("/student/detail/:id",Controller.showStudentDetail)
-router.get("/student/update/:id",(req, res) =>{
-    res.send("eee")
-} )
+router.get("/student/update/:id",Controller.getStudentUpdate)
+router.post("/student/update/:id",Controller.postStudentUpdate)
+router.get("/student/delete/:id",Controller.getDeleteStudent)
+router.post("/student/delete/:id",Controller.postDeleteStudent)
 export default router

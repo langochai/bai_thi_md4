@@ -12,7 +12,15 @@ export class Controller{
     }
     static async postAddStudent(req,res){
         let{name,classStudent,theoryScore,practicalScore,evaluate,description} = req.body
-
+        let student = new Student({
+            name,
+            class:classStudent,
+            theoryScore,
+            practicalScore,
+            evaluate,
+            description
+        })
+        await student.save()
         res.redirect("/")
     }
     static async showStudentDetail(req,res){
@@ -25,5 +33,27 @@ export class Controller{
         const student = await Student.findById(id).populate("class",{name: 1, _id: 0},Class);
         const classStudent = await Class.find()
         res.render("update",{student,classes:classStudent})
+    }
+    static async postStudentUpdate(req,res){
+        let id = req.params.id
+        let{name,classStudent,theoryScore,practicalScore,evaluate,description} = req.body
+        let newStudent = {
+            name,
+            class:classStudent,
+            theoryScore,
+            practicalScore,
+            evaluate,
+            description
+        }
+        await Student.updateOne({_id:id},newStudent)
+        res.redirect("/")
+    }
+    static async getDeleteStudent(req,res){
+        res.render("delete")
+    }
+    static async postDeleteStudent(req,res){
+        let id = req.params.id
+        await Student.deleteOne({_id:id})
+        res.redirect("/")
     }
 }

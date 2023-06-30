@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Update student</title>
+    <title>Delete Student</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,42 +12,17 @@
 </head>
 <body>
 <form action="" method="post">
+    <p>Are you sure</p>
     <table>
         <tr>
-            <td>Tên</td>
-            <td><input type="text" name="name" value="<%=student.name%>"></td>
-        </tr>
-        <tr>
-            <td>Lớp</td>
             <td>
-                <select name="classStudent">
-                    <%classes.forEach(cl=>{%>
-                    <option value="<%=cl._id%>" selected><%=cl.name%></option>
-                    <%})%>
-                </select>
+                <button type="submit" class="btn btn-danger">YES</button>
             </td>
-        </tr>
-        <tr>
-            <td>Điểm lý thuyết</td>
-            <td><input type="number" name="theoryScore" value="<%=student.theoryScore%>"></td>
-        </tr>
-        <tr>
-            <td>Điểm thực hành</td>
-            <td><input type="number" name="practicalScore" value="<%=student.practicalScore%>"></td>
-        </tr>
-        <tr>
-            <td>Đánh giá</td>
-            <td><input type="text" name="evaluate" value="<%=student.evaluate%>"></td>
-        </tr>
-        <tr>
-            <td>Mô tả</td>
             <td>
-                <textarea name="description"  cols="30" rows="10"><%=student.description%></textarea>
+                <a href="/" class="btn btn-secondary">NO</a>
             </td>
         </tr>
     </table>
-    <button type="submit" class="btn btn-primary">Lưu</button>
-    <a href="/" class="btn btn-secondary">Thoát</a>
 </form>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

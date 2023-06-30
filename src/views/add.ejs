@@ -20,9 +20,9 @@
         <tr>
             <td>Lớp</td>
             <td>
-                <select name="classStudent" id="">
+                <select name="classStudent">
                     <%classes.forEach(cl=>{%>
-                        <option value="<%=cl._id%>"><%=cl.name%></option>
+                        <option value="<%=cl._id%>" selected><%=cl.name%></option>
                     <%})%>
                 </select>
             </td>
